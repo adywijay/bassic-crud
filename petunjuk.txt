@@ -1,0 +1,4 @@
+- source ini merupakan portofolio crud laravel dengan ajax dan crud langsung dari model
+- front end yg digunakan pada pada portofolio ini menggunkan framework css materialize
+- fitur dalam portofolio ini crud sebagian sudah menggunakan ajax dan konfirmasi user menggunakan email / smtp
+- untuk fitur konfirmasi user menggunakan email / smtp silakan disesuaikan pengaturan pada requirment .env
