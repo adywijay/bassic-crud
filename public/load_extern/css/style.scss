@@ -1,0 +1,21 @@
+// EXTRA PADDING FOR SIDEBAR-1 ON DESKTOP WHEN IT'S FIXED.
+//
+header, main, footer {
+	padding-left: 300px;
+}
+// REMOVE EXTRA PADDING FOR SIDEBAR 1 WHEN IT'S CLOSED ON TABLET AND LOWER... (601px-992px).
+//
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}
+
+// PADDING FOR SIDEBAR-2 AT ULTRA-WIDE SCREEN RESOLUTION
+//
+@media only screen and (min-width: 1925px) {
+	header, main, footer, .fixed-action-btn {
+		padding-right: 300px!important;
+		transition: all 0.5s ease;
+	}
+}
