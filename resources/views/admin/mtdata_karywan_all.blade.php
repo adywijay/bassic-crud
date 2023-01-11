@@ -7,8 +7,8 @@
                     <span class="table-title">
                         List data employers</span>
                     <div class="actions">
-                        {{-- <a href="javascript:void(0)" onclick="manualAddKdt()" class="modal-trigger btn-flat nopadding"><i
-                                class="material-icons">group_add</i></a> --}}
+                        <a href="{{ route('export_emp_pdf') }}"class="modal-trigger btn-flat nopadding"><i class="material-icons">print</i></a>
+                        <a href="{{ route('export_emp') }}" target="_blank" class="modal-trigger btn-flat nopadding"><i class="material-icons">swap_vertical_circle</i></a>
                         <a href="javascript:void(0)" onclick="frmDel()" class="modal-trigger btn-flat nopadding"><i
                                 class="material-icons">delete_forever</i></a>
                         <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i
@@ -69,7 +69,7 @@
                 <br>
                 <form id="emp-form" class="col s12">
                     @csrf
-                    <input type="text" name="karyawan_id" id="karyawan_id">
+                    <input type="hidden" name="karyawan_id" id="karyawan_id">
                     <div class="row">
                         <div class="input-field col s6">
                             <input readonly placeholder="Nama Lengkap" name="nama_karyawan" id="nama_karyawan"
@@ -282,16 +282,6 @@
                     $('#modal1').modal('close'),
                         alert(response['message']),
                         window.location.reload();
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    // console.log(xhr.status);
-                    // console.log(xhr.responseText);
-                    // console.log(thrownError);
-                    alert(
-                        xhr.status + "\\" +
-                        xhr.responseText + "\\" +
-                        thrownError
-                    );
                 }
             })
         })

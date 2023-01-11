@@ -18,7 +18,7 @@ use App\Http\Traits\KaryawanTrait;
 use App\Http\Traits\RoleTrait;
 use App\Http\Traits\UserTrait;
 use App\Http\Traits\AccountTrait;
-use App\Account as Ac;
+use App\Http\Traits\ReportingTrait;
 
 class AdminController extends Controller
 {
@@ -28,6 +28,7 @@ class AdminController extends Controller
     use KandidatTrait;
     use KaryawanTrait;
     use AccountTrait;
+    use ReportingTrait;
 
     public function __construct()
     {
@@ -102,6 +103,16 @@ class AdminController extends Controller
         return view('admin.mtdata_account_all', [
             "judul" => "View | Account"
         ], compact('call'));
+    }
+
+    public function reportEmp()
+    {
+        return $this->exportKaryawan();
+    }
+
+    public function PdfEmp()
+    {
+        return $this->printPDFEmp();
     }
 
     /**

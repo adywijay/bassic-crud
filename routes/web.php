@@ -116,6 +116,9 @@ Route::prefix('admin')->group(
         Route::get('/emp/get/{id}', [AdminController::class, 'getIdEmp']);
         Route::post('/emp/reqdel', [AdminController::class, 'reqDelEmpById'])->name('reqdelby_id');
         Route::post('/emp/claim/accounts', [AdminController::class, 'addAcount'])->name('klaimempacc');
+        Route::get('/emp/report', [AdminController::class, 'reportEmp'])->name('export_emp');
+        Route::get('/emp/report/pdf', [AdminController::class, 'PdfEmp'])->name('export_emp_pdf');
+
 
         /* Route Manage Accounts */
         Route::get('/acc', [AdminController::class, 'getAccount'])->name('accounts');
